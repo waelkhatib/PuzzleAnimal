@@ -1,0 +1,116 @@
+settings =
+{
+     build =
+    {
+        neverStripDebugInfo = true
+    },
+  plugins = {
+    -- key is the name passed to Lua's 'require()'
+    ["CoronaProvider.analytics.flurry"] =
+        {
+            -- required
+            publisherId = "com.coronalabs",
+        },
+    ["plugin.google.play.services"] =
+        {
+            publisherId = "com.coronalabs"
+        },
+    ["facebook"] =
+    {
+        -- required
+        publisherId = "com.coronalabs"
+    },
+    ["plugin.google.iap.v3"] =
+    {
+        publisherId = "com.coronalabs",
+        supportedPlatforms = { android=true }
+    },
+    ["plugin.chartboost"] =
+    {
+        publisherId = "com.swipeware"
+    },
+    ["CoronaProvider.native.popup.social"] =
+    {
+        publisherId = "com.coronalabs"
+    },
+  },
+    orientation =
+    {
+        default = "landscapeRight",
+        supported =
+        {
+        "landscapeLeft", "landscapeRight"
+        }
+    },
+	android =
+	{
+      googlePlayGamesAppId = "199897814698",  --insert your app id number for google game services
+	  usesPermissions =
+        {
+            -- This permission is required in order for analytics to be sent to Flurry's servers.
+            "android.permission.INTERNET",
+            "com.android.vending.BILLING", --remove this line if you don't use iAP
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.READ_PHONE_STATE",
+            -- These permissions are optional.
+            -- If set, then Flurry will also record current location via GPS and/or WiFi.
+            -- If not set, then Flurry can only record which country the app was used in.
+            "android.permission.ACCESS_FINE_LOCATION",    -- Fetches location via GPS.
+            "android.permission.ACCESS_COARSE_LOCATION",  -- Fetches location via WiFi or cellular service.
+        },
+        usesFeatures =
+        {
+            -- If you set permissions "ACCESS_FINE_LOCATION" and "ACCESS_COARSE_LOCATION" above,
+            -- then you should set up your app to not require location services as follows.
+            -- Otherwise, devices that do not have location sevices (such as a GPS) will be unable
+            -- to purchase this app in the app store.
+            { name = "android.hardware.location", required = false },
+            { name = "android.hardware.location.gps", required = false },
+            { name = "android.hardware.location.network", required = false },
+        },
+	},
+	iphone =
+	{
+		plist =
+		{
+            UIStatusBarHidden=true,
+            UIAppFonts =
+            {
+                "burnstown dam.ttf"
+            },
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles =
+			{
+                 "Icon.png",
+                "Icon@2x.png",
+                "Icon-60.png",
+                "Icon-60@2x.png",
+                "Icon-60@3x.png",
+                "Icon-72.png",
+                "Icon-72@2x.png",
+                "Icon-76.png",
+                "Icon-76@2x.png",
+                "Icon-Small-40.png",
+                "Icon-Small-40@2x.png",
+                "Icon-Small-40@3x.png",
+                "Icon-Small-50.png",
+                "Icon-Small-50@2x.png",
+                "Icon-Small.png",
+                "Icon-Small@2x.png",
+                "Icon-Small@3x.png",
+			},
+            UIApplicationExitsOnSuspend = false,	-- must be false for single sign-on to work
+			FacebookAppID = "629903493813451",	-- replace XXXXXXXXX with your facebook appId
+
+			CFBundleURLTypes =
+			{
+				{
+					CFBundleURLSchemes =
+					{
+						"fb629903493813451",	-- replace XXXXXXXXX with your facebook appId, make sure that you leave fb in front of it				
+					}
+				}
+			}
+		}
+	}
+}

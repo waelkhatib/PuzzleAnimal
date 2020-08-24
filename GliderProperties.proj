@@ -1,0 +1,36 @@
+{
+  "configs" : [ {
+    "config_name" : "default",
+    "autolibs" : [ ],
+    "fileAlias" : {
+    },
+    "plugin_props" : {
+      "corona" : {
+        "panelStorage" : {
+        }
+      },
+      "lua" : {
+        "panelStorage" : {
+        }
+      }
+    },
+    "excludedFiles" : [ ],
+    "sdkselect" : "track_selection",
+    "extlibs" : [ ],
+    "codeInsertion" : "",
+    "filePatternExclusionKey" : "GliderProperties.proj, .git, .svn, .tmp, GliderGenerated.gproj"
+  } ],
+  "ver" : 4,
+  "project_wide_config" : {
+    "config_name" : "default",
+    "autolibs" : [ ],
+    "fileAlias" : {
+    },
+    "plugin_props" : {
+    },
+    "excludedFiles" : [ ],
+    "sdkselect" : "track_selection",
+    "extlibs" : [ ]
+  },
+  "selected_config" : 0
+}
