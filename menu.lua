@@ -395,7 +395,7 @@ function scene:create( event )
   group:insert( aboutButton )
   aboutButton:addEventListener ( "touch", touchHandler )
 
-if ( system.getInfo( "platformName" ) ~= "WinPhone" ) then 
+--[[if ( system.getInfo( "platformName" ) ~= "WinPhone" ) then 
   if _G.activeRemoveAdsButton and not dbJsonLib.getSaveValue("removeAds") then
     local removeAdsButton = dbJsonLib.newSimpleButton(group, "resource/IMG/noads.png", 100, 100);
     removeAdsButton.x, removeAdsButton.y = leftSide + 60 , topSide + 170
@@ -429,7 +429,7 @@ if ( system.getInfo( "platformName" ) ~= "WinPhone" ) then
       end}});
     end
   end
-end
+end--]]
 
   createPages(group)
 end
